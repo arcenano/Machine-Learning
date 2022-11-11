@@ -1,0 +1,76 @@
+{
+  "name": "testing",
+  "training": true,
+  "cuda": {
+    "strategy": false,
+    "num_nodes": 1,
+    "on": true
+  },
+  "precision": 32,
+  "backbone_weights": false,
+  "pretrain": "epoch=2-step=114655.ckpt",
+  "wandb_run": false,
+  "wandb_id": false,
+  "save_interval": 1, 
+  "dataset": "icdar2015",
+  "images": "images/",
+  "input_dir":"./input",
+  "output_dir":"./output",
+  "data_loader": {
+    "val": {
+      "dir": "/home/owner/code/ICDAR/2015/detection",
+      "dataset": "icdar2015"
+    },
+    "test": {
+      "dir": "/home/owner/code/ICDAR/2015/detection",
+      "dataset": "icdar2015"
+    },
+    "train": {
+      "dir": "/home/owner/Downloads/SynthText/SynthText",
+      "dataset": "synthtext"
+    },
+    "classes": 1000,
+    "batch_size": 3,
+    "shuffle": true,
+    "workers": 16,
+    "patch_size": 200,
+    "max_transcripts_pre_batch": 32,
+    "size": 640,
+    "scale": 0.25
+  },
+  "visualizations": "visualizations",
+  "validation": {
+    "scales": [800, 1000, 1333]
+  },
+  "lr_scheduler": {
+    "name": "StepLR",
+    "args": {
+      "gamma": 0.1,
+      "step_size": 5
+    }
+  },
+
+  "optimizer_type": "AdamW",
+  "optimizer": {
+    "lr": 0.0001
+  },
+  "loss": "FOTSLoss",
+  "metrics": ["fots_metric"],
+  "trainer": {
+    "epochs": 10,
+    "save_dir": "saved/",
+    "verbosity": 2,
+    "monitor": "hmean",
+    "monitor_mode": "max",
+    "log_every_n_steps": 1,
+    "log_gpu_memory": "all",
+    "overfit_batches": false,
+    "terminate_on_nan": false,
+    "fast_dev_run": false,
+    "check_val_every_n_epoch": 1
+  },
+  "arch": "FOTSModel",
+  "model": {
+    "mode": "detection"
+  }
+}

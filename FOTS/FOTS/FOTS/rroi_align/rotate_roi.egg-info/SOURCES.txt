@@ -1,0 +1,10 @@
+build.py
+/home/owner/Code/ML/FOTS/FOTS/rroi_align/src/rroi_align_cuda.cpp
+functions/__init__.py
+functions/rroi_align.py
+modules/__init__.py
+modules/rroi_align.py
+rotate_roi.egg-info/PKG-INFO
+rotate_roi.egg-info/SOURCES.txt
+rotate_roi.egg-info/dependency_links.txt
+rotate_roi.egg-info/top_level.txt

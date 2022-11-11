@@ -1,0 +1,6 @@
+build.py
+roi_pooling.c
+rroi_align.egg-info/PKG-INFO
+rroi_align.egg-info/SOURCES.txt
+rroi_align.egg-info/dependency_links.txt
+rroi_align.egg-info/top_level.txt
